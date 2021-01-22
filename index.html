@@ -16,7 +16,7 @@
 
 <body>
   <main class="container">
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Weather Dashboard</a>
       </div>
@@ -26,18 +26,18 @@
       <div class="col-md-4">
         <form>
           <div class="search-field">
-            <label for="city-search">Search for City</label>
-            <input id="search-input" type="search" name="city-search" />
+            <label for="citySearch">Search for City</label>
+            <input id="searchInput" type="search" name="citySearch" />
           </div>
         </form>
         <ul class="previous" id="previous">
 
         </ul>
       </div>
-    
+
       <div class="col-md-8">
-        <div class="row">
-          <div class="card">
+        <div class="card border-light">
+          <div class="card-body">
             <h4 id="city-name">City Name:</h4>
             <p id="temp">Temperature:</p>
             <p id="humidity">Humidity:</p>
@@ -48,50 +48,9 @@
       </div>
     </div>
 
-<!---->
-    <div class="row">
-      <div class="card-group">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
+
+    <div class="row" id="forecast-cards">
+      dynamically created forecast cards here
     </div>
 
   </main>
