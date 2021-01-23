@@ -24,10 +24,11 @@
 
     <div class="row">
       <div class="col-md-4">
-        <form>
+        <form id="userForm">
           <div class="search-field">
             <label for="citySearch">Search for City</label>
-            <input id="searchInput" type="search" name="citySearch" />
+            <input id="searchInput" type="search" name="citySearch" value="City"/>
+            <button type="submit">Search</button>
           </div>
         </form>
         <ul class="previous" id="previous">
@@ -38,11 +39,11 @@
       <div class="col-md-8">
         <div class="card border-light">
           <div class="card-body">
-            <h4 id="city-name">City Name:</h4>
-            <p id="temp">Temperature:</p>
-            <p id="humidity">Humidity:</p>
-            <p id="wind-speed">Wind Speed:</p>
-            <p id="uv-index">UV Index:</p>
+            <div id="city-name"></div>
+            <div id="temp"></div>
+            <div id="humidity"></div>
+            <div id="wind-speed"></div>
+            <div id="uv-index"></div>
           </div>
         </div>
       </div>
