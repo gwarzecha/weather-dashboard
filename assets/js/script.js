@@ -7,17 +7,11 @@ submitCityEl = document.querySelector("#userForm");
 window.onload = function() {
   priorSearch = localStorage.getItem("city");
   
+  fetchCity(priorSearch);
 };
 
-  
 
-
-var getCurrentWeather = function(event) {
-  event.preventDefault();
-  
-  var cityName = document.querySelector("#searchInput").value;
-  console.log(cityName);
-
+var fetchCity = function(cityName) { // takes in city string
   localStorage.setItem("city", cityName);
 
   var ApiKey = "178a5ae26caab391ec7b938898f1d4c8";
@@ -72,6 +66,9 @@ var getCurrentWeather = function(event) {
 
             var list = response.list;
             console.log(list);
+
+            $("#forecastCards").html("");
+
           // loops through the list, grabbing every 8th item from the list
             for (var i = 7; i < list.length; i++) {
               if ((i + 1) % 8 === 0) {
@@ -91,11 +88,18 @@ var getCurrentWeather = function(event) {
 
                 // appends each card to the container in index.html
                 $("#forecastCards").append(forecastCard);
-
               }
             };
-
     })
+};
+
+var getCurrentWeather = function(event) {
+  event.preventDefault();
+  
+  var cityName = document.querySelector("#searchInput").value;
+  
+  fetchCity(cityName);
+  
 };
 
 submitCityEl.addEventListener("submit", getCurrentWeather);
