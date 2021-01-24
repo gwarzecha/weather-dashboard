@@ -23,12 +23,12 @@
     </nav>
 
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 mt-3">
         <form id="userForm">
           <div class="search-field">
             <label for="citySearch">Search for City</label>
-            <input id="searchInput" type="search" name="citySearch" value="City"/>
-            <button type="submit">Search</button>
+            <input id="searchInput" type="search" name="citySearch" />
+            <button type="submit" class="btn-secondary btn-sm" id="searchBtn">Search</button>
           </div>
         </form>
         <ul class="previous" id="previous">
@@ -36,7 +36,7 @@
         </ul>
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-8 mt-3">
         <div class="card border-light">
           <div class="card-body">
             <div id="city-name"></div>
@@ -50,8 +50,8 @@
     </div>
 
 
-    <div class="row" id="forecast-cards">
-      dynamically created forecast cards here
+    <div class="row justify-content-center" id="forecastCards">
+      
     </div>
 
   </main>
