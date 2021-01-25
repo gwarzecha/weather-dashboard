@@ -39,7 +39,7 @@ var fetchCity = function (cityName) {
       $("#wind-speed").text("Wind Speed: " + response.list[0].wind.speed + " mph");
 
 
-      var uvIndex = "http://api.openweathermap.org/data/2.5/uvi?lat=" +
+      var uvIndex = "https://api.openweathermap.org/data/2.5/uvi?lat=" +
         response.city.coord.lat +
         "&lon=" +
         response.city.coord.lat +
