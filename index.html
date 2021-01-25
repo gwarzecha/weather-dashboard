@@ -7,23 +7,26 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Righteous&display=swap" rel="stylesheet">
   <title>Weather Dashboard</title>
 </head>
 
 <header>
-
+  <nav class="navbar navbar-light bg-secondary">
+    <div class="container-fluid justify-content-center">
+      <span class="navbar-brand text-light">Weather Dashboard</span>
+    </div>
+  </nav>
 </header>
 
 <body>
   <main class="container">
-    <nav class="navbar navbar-light bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Weather Dashboard</a>
-      </div>
-    </nav>
+    
 
     <div class="row">
-      <div class="col-md-4 mt-3 d-flex flex-column justify-content-center">
+      <div class="col-md-4 mt-3 mb-3 d-flex flex-column justify-content-center">
         <form id="userForm">
           <div class="search-field">
             <label for="citySearch">Search for City:</label>
@@ -37,13 +40,13 @@
 
 
       <div class="col-md-8 mt-3">
-        <div class="card border-light">
-          <div class="card-body">
-            <div id="city-name"></div>
-            <div id="temp"></div>
-            <div id="humidity"></div>
-            <div id="wind-speed"></div>
-            <div id="uv-index"></div>
+        <div class="forecastContainer">
+          <div class="card-body d-flex flex-column align-items-center">
+            <div class="cardContent" id="city-name"></div>
+            <div class="cardContent" id="temp"></div>
+            <div class="cardContent" id="humidity"></div>
+            <div class="cardContent" id="wind-speed"></div>
+            <div class="cardContent" id="uv-index"></div>
           </div>
         </div>
       </div>

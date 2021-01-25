@@ -3,6 +3,7 @@ submitCityEl = document.querySelector("#userForm");
 searchedCities = document.querySelector("#previous");
 
 
+
 // need to work on this function to retrieve last searched city from ls and populate on page on load
 window.onload = function () {
   priorSearch = localStorage.getItem("city");
@@ -77,7 +78,7 @@ var fetchCity = function (cityName) { // takes in city string
 
           // dynamically created forecast cards
           var forecastCard =
-            `<div class="singleCard">
+            `<div class="singleCard d-flex flex-column align-items-center">
                  <h4 class="cardTitle">${fiveDayDate}<h4>
                  <p>${list[i].main.temp} °F</p>
                  <img src=http://openweathermap.org/img/wn/${list[i].weather[0].icon}@2x.png />

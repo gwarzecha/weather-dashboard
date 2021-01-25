@@ -2,12 +2,53 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(233, 233, 162);
+}
+
 .singleCard {
   padding: 10px;
-  margin: 5px;
+  margin: 25px 5px 5px 5px;
   background-color: rgb(29, 139, 71);
+  color: aliceblue;
+  font-family: 'Kanit', sans-serif;
+  border-radius: 15px;
+}
+
+
+.card-body {
+  border-radius: 15px;
 }
 
 #searchBtn {
   margin-top: 5px;
 }
+
+label {
+  font-family: 'Kanit', sans-serif;
+  font-size: 24px;
+}
+
+.savedCity {
+  margin: 2px;
+  border-radius: 15px;
+  
+}
+
+.card-body {
+  background-color: rgb(161, 179, 62);
+}
+
+.navbar-brand {
+  font-family: 'Righteous', cursive;
+  font-size: 38px;
+}
+
+
+
+.cardContent {
+  font-family: 'Kanit', sans-serif;
+  font-size: 18px;
+}
+
+
