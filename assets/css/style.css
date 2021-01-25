@@ -31,8 +31,7 @@ label {
 
 .savedCity {
   margin: 2px;
-  border-radius: 15px;
-  
+  border-radius: 15px; 
 }
 
 .card-body {
@@ -43,7 +42,6 @@ label {
   font-family: 'Righteous', cursive;
   font-size: 38px;
 }
-
 
 
 .cardContent {

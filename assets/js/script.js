@@ -11,8 +11,8 @@ window.onload = function () {
   fetchCity(priorSearch);
 };
 
-
-var fetchCity = function (cityName) { // takes in city string
+// runs upon initial page load to gather weather info on last searched city in ls
+var fetchCity = function (cityName) {
   localStorage.setItem("city", cityName);
 
   var ApiKey = "178a5ae26caab391ec7b938898f1d4c8";
@@ -23,16 +23,17 @@ var fetchCity = function (cityName) { // takes in city string
     ApiKey +
     "&units=imperial";
 
-  console.log(apiUrl);
+  //console.log(apiUrl);
 
   fetch(apiUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (response) {
-      console.log(response.data);
+      //console.log(response.data);
 
       $("#city-name").html("<h4>" + response.city.name + "</h4>");
+      $("#weather-icon").html("<img src=http://openweathermap.org/img/wn/04n.png />");
       $("#temp").text("Temp: " + response.list[0].main.temp + " °F");
       $("#humidity").text("Humidity: " + response.list[0].main.humidity + "%");
       $("#wind-speed").text("Wind Speed: " + response.list[0].wind.speed + " mph");
@@ -44,16 +45,24 @@ var fetchCity = function (cityName) { // takes in city string
         response.city.coord.lat +
         "&appid=" +
         ApiKey;
-      console.log(uvIndex);
+      //console.log(uvIndex);
 
       fetch(uvIndex)
         .then(function (response) {
           return response.json();
         })
         .then(function (response) {
-          console.log(response.data);
+          //console.log(response.data);
 
+          //$("#uv-index").attr("class", "");
           $("#uv-index").text("UV Index: " + response.value);
+          if (response.value < 3) {
+            $("#uv-index").addClass("text-white bg-success p-1")
+          } else if (response.value > 3 && response.value < 6) {
+            $("#uv-index").addClass("text-white bg-warning p-1");
+          } else if (response.value > 6) {
+            $("#uv-index").addClass("text-white bg-danger p-1")
+          }
         })
 
       // dynamically created 5-day forecast cards
@@ -81,7 +90,7 @@ var fetchCity = function (cityName) { // takes in city string
             `<div class="singleCard d-flex flex-column align-items-center">
                  <h4 class="cardTitle">${fiveDayDate}<h4>
                  <p>${list[i].main.temp} °F</p>
-                 <img src=http://openweathermap.org/img/wn/${list[i].weather[0].icon}@2x.png />
+                 <img alt="weather icon" src=http://openweathermap.org/img/wn/${list[i].weather[0].icon}@2x.png />
                  <p>${list[i].main.humidity} %</p>
                  </div>` ;
           //console.log(forecastCard);
@@ -94,14 +103,19 @@ var fetchCity = function (cityName) { // takes in city string
 };
 
 
-// runs when search criteria is entered and search button clicked
+// runs when search criteria is entered and search button clicked after page initially loads
 var getCurrentWeather = function (event) {
   event.preventDefault();
 
   var cityName = document.querySelector("#searchInput").value;
+  if (cityName === "") {
+    alert("Please enter a city");
+    return;
+  }
 
   fetchCity(cityName);
 
+  // adds previously searched city to a clickable button below search box
   var pastList = $("<button>");
   pastList.addClass("savedCity");
   pastList.text(cityName).val();
@@ -113,6 +127,10 @@ var getCurrentWeather = function (event) {
     var searchAgain = $(this).text();
     fetchCity(searchAgain);
   })
+
+  // clears search field once 'search' is clicked
+  $("#searchInput").val("");
+
 };
 
 
