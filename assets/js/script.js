@@ -54,7 +54,6 @@ var fetchCity = function (cityName) {
         .then(function (response) {
           //console.log(response.data);
 
-          //$("#uv-index").attr("class", "");
           $("#uv-index").text("UV Index: " + response.value);
           if (response.value < 3) {
             $("#uv-index").addClass("text-white bg-success p-1")
